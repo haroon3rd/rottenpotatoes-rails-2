@@ -7,17 +7,24 @@ class MoviesController < ApplicationController
   end
 
   def index
-    #Part 1 starts here:
-    @ratings_to_show = []
-    if !params[:ratings].nil?
-      @ratings_to_show = params[:ratings].keys
+    #Part 1,2,3 starts here:
+    if request.path == '/' #For a default path
+      reset_session
     end
-
-    @movies = Movie.with_ratings(@ratings_to_show)
-    @all_ratings = Movie.all_ratings
+    
+    @ratings_to_show =!session[:ratings_to_show].nil? ? session[:ratings_to_show]:[]
+    if !session[:sort_by].nil?
+      if !params[:sort].nil? and params[:sort] != session[:sort_by] #What if the sort value is changed?
+        session[:sort_by] = params[:sort]
+      end
+      @sort = session[:sort_by]
+    else
+      @sort = params[:sort] 
+    end
+   
     
     #Added for part 2
-    @sort = params[:sort]
+    #@sort = params[:sort] //Moved up for Part 3 Session data
 
     if @sort
       @movies = @movies.order(@sort)
