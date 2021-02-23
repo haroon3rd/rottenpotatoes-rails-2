@@ -1,7 +1,7 @@
 <!--  This file is app/views/movies/index.html.erb -->
 <h2>All Movies</h2>
 
-<%#  Part 2: Start here... %>
+<%#  Part 2: Start here... Also Part 1 %>
 <%= form_tag movies_path, method: :get, id: 'ratings_form' do %>
   Include:
   <% @all_ratings.each do |rating| %>
@@ -12,14 +12,16 @@
   <% end %>
   <%= submit_tag 'Refresh', id: 'ratings_submit', class: 'btn btn-primary' %>
 <% end %>
+
 <table class="table table-striped col-md-12" id="movies">
   <thead>
     <tr>
-      <thclass="<%=@title_header%>" >
-        <%= link_to 'Movie title', movies_path(sort: :title), :id => 'title_header'%></th>
+      <th class="<%= ("highlight" if @highlight == "title") %>">
+        <%= link_to 'Movie Title', movies_path(:sort => 'title', :ratings =>@ratings_to_show.product([1]).to_h), :id => 'title_head' %>
+      </th>
       <th>Rating</th>
-      <thclass="<%=@release_date_header%>" id= '@release_date_header'>
-        <%= link_to 'Release Date', movies_path(sort: 'release_date') , :id => 'release_date_header'%></th>
+      <th class="<%= ("highlight" if @highlight == "release_date") %>">
+      <%= link_to 'Release Date', movies_path(:sort => 'release_date', :ratings =>@ratings_to_show.product([1]).to_h), :id => 'release_date_head' %></th>
       <th>More Info</th>
     </tr>
   </thead>
