@@ -15,6 +15,24 @@ class MoviesController < ApplicationController
 
     @movies = Movie.with_ratings(@ratings_to_show)
     @all_ratings = Movie.all_ratings
+    
+    #Added for part 2
+    @sort = params[:sort]
+
+    if @sort
+      @movies = @movies.order(@sort)
+        case @sort
+        when "title"
+          @title_header = 'bg-warning'    #bootstrap class
+        when !"title"
+          @title_header = 'hilite'        #css class
+        when "release_date"
+          @release_date_header = 'bg-warning'
+        when !"release_date"
+          @release_date_header = 'hilite'
+        end
+    end
+    
   end
 
   def new
