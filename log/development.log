@@ -1,0 +1,1207 @@
+  [1m[36m (5.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (4.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateMovies (20111119180638)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in up at /home/ubuntu/environment/hw-acceptance-unit-test-cycle/rottenpotatoes/db/migrate/20111119180638_create_movies.rb:10)
+  [1m[35m (0.3ms)[0m  CREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20111119180638"]]
+  [1m[35m (4.3ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (4.9ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (4.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (4.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (7.1ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (4.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (4.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+
+
+Started GET "/" for 128.194.130.86 at 2021-03-10 22:29:00 +0000
+
+
+Started GET "/movies" for 128.194.130.86 at 2021-03-10 22:29:00 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.0ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 304ms (Views: 287.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 128.194.130.86 at 2021-03-10 22:29:01 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (5.1ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (4.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (4.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+
+
+Started GET "/" for 128.194.130.86 at 2021-03-10 22:33:34 +0000
+
+
+Started GET "/movies" for 128.194.130.86 at 2021-03-10 22:33:34 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.0ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (6.7ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 219ms (Views: 202.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/movies/new" for 128.194.130.86 at 2021-03-10 22:33:37 +0000
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.erb within layouts/application (10.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies" for 128.194.130.86 at 2021-03-10 22:33:43 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 8.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/new" for 128.194.130.86 at 2021-03-10 22:33:46 +0000
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 26ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies" for 128.194.130.86 at 2021-03-10 22:33:48 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.9ms | ActiveRecord: 0.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Aladdin"], ["rating", "G"], ["release_date", "1992-11-25 00:00:00.000000"], ["created_at", "2021-03-10 22:34:18.379053"], ["updated_at", "2021-03-10 22:34:18.379053"]]
+  [1m[35m (3.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Terminator"], ["rating", "R"], ["release_date", "1984-10-26 00:00:00.000000"], ["created_at", "2021-03-10 22:34:18.383897"], ["updated_at", "2021-03-10 22:34:18.383897"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "When Harry Met Sally"], ["rating", "R"], ["release_date", "1989-07-21 00:00:00.000000"], ["created_at", "2021-03-10 22:34:18.387785"], ["updated_at", "2021-03-10 22:34:18.387785"]]
+  [1m[35m (2.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Help"], ["rating", "PG-13"], ["release_date", "2011-08-10 00:00:00.000000"], ["created_at", "2021-03-10 22:34:18.391625"], ["updated_at", "2021-03-10 22:34:18.391625"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Chocolat"], ["rating", "PG-13"], ["release_date", "2001-01-05 00:00:00.000000"], ["created_at", "2021-03-10 22:34:18.395467"], ["updated_at", "2021-03-10 22:34:18.395467"]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Amelie"], ["rating", "R"], ["release_date", "2001-04-25 00:00:00.000000"], ["created_at", "2021-03-10 22:34:18.399580"], ["updated_at", "2021-03-10 22:34:18.399580"]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "2001: A Space Odyssey"], ["rating", "G"], ["release_date", "1968-04-06 00:00:00.000000"], ["created_at", "2021-03-10 22:34:18.403735"], ["updated_at", "2021-03-10 22:34:18.403735"]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-11-05 00:00:00.000000"], ["created_at", "2021-03-10 22:34:18.407664"], ["updated_at", "2021-03-10 22:34:18.407664"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1981-06-12 00:00:00.000000"], ["created_at", "2021-03-10 22:34:18.411536"], ["updated_at", "2021-03-10 22:34:18.411536"]]
+  [1m[35m (3.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Chicken Run"], ["rating", "G"], ["release_date", "2000-06-21 00:00:00.000000"], ["created_at", "2021-03-10 22:34:18.416442"], ["updated_at", "2021-03-10 22:34:18.416442"]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 128.194.130.86 at 2021-03-10 22:34:29 +0000
+
+
+Started GET "/movies" for 128.194.130.86 at 2021-03-10 22:34:29 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.1ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (15.8ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 1.3ms)
+
+ActionView::Template::Error (undefined method `director' for #<Movie:0x00007ffaf09d5c68>):
+    20:           <%= movie.title %>
+    21:         </td>
+    22:         <td>
+    23:           <%= movie.director %>
+    24:         </td>
+    25:         <td>
+    26:           <%= movie.rating %>
+  app/views/movies/index.html.erb:23:in `block in _app_views_movies_index_html_erb___1322756391069998587_70357877252740'
+  app/views/movies/index.html.erb:17:in `_app_views_movies_index_html_erb___1322756391069998587_70357877252740'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.8ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.6ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (5.1ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (4.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (3.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 128.194.130.86 at 2021-03-10 22:46:24 +0000
+
+
+Started GET "/movies" for 128.194.130.86 at 2021-03-10 22:46:24 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.0ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (16.0ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 1.3ms)
+
+ActionView::Template::Error (undefined method `director' for #<Movie:0x00007f26f49b30f8>):
+    20:           <%= movie.title %>
+    21:         </td>
+    22:         <td>
+    23:           <%= movie.director %>
+    24:         </td>
+    25:         <td>
+    26:           <%= movie.rating %>
+  app/views/movies/index.html.erb:23:in `block in _app_views_movies_index_html_erb__3974193532031285309_69902644210960'
+  app/views/movies/index.html.erb:17:in `_app_views_movies_index_html_erb__3974193532031285309_69902644210960'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.0ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.6ms)
+
+
+Started GET "/movies" for 128.194.130.86 at 2021-03-10 22:46:26 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `director' for #<Movie:0x00007f26f4a5c7e8>):
+    20:           <%= movie.title %>
+    21:         </td>
+    22:         <td>
+    23:           <%= movie.director %>
+    24:         </td>
+    25:         <td>
+    26:           <%= movie.rating %>
+  app/views/movies/index.html.erb:23:in `block in _app_views_movies_index_html_erb__3974193532031285309_69902644210960'
+  app/views/movies/index.html.erb:17:in `_app_views_movies_index_html_erb__3974193532031285309_69902644210960'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.5ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.2ms)
+
+
+Started GET "/" for 128.194.130.86 at 2021-03-10 22:48:22 +0000
+
+
+Started GET "/movies" for 128.194.130.86 at 2021-03-10 22:48:22 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: movies: SELECT "movies".* FROM "movies"):
+    14:     </tr>
+    15:   </thead>
+    16:   <tbody>
+    17:     <% @movies.each do |movie| %>
+    18:       <tr>
+    19:         <td>
+    20:           <%= movie.title %>
+  app/views/movies/index.html.erb:17:in `_app_views_movies_index_html_erb__598042001351405720_70102863761540'
+
+
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.8ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.0ms)
+  [1m[36m (8.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (4.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateMovies (20111119180638)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in up at /home/ubuntu/environment/hw-acceptance-unit-test-cycle/rottenpotatoes/db/migrate/20111119180638_create_movies.rb:11)
+  [1m[35m (0.4ms)[0m  CREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20111119180638"]]
+  [1m[35m (3.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (4.8ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (4.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (4.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+
+
+Started GET "/" for 128.194.130.86 at 2021-03-10 22:49:30 +0000
+
+
+Started GET "/movies" for 128.194.130.86 at 2021-03-10 22:49:30 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.1ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 220ms (Views: 202.2ms | ActiveRecord: 1.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Aladdin"], ["rating", "G"], ["release_date", "1992-11-25 00:00:00.000000"], ["director", "Ron Clements"], ["created_at", "2021-03-10 22:49:54.269013"], ["updated_at", "2021-03-10 22:49:54.269013"]]
+  [1m[35m (3.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Terminator"], ["rating", "R"], ["release_date", "1984-10-26 00:00:00.000000"], ["director", "James Cameron"], ["created_at", "2021-03-10 22:49:54.274679"], ["updated_at", "2021-03-10 22:49:54.274679"]]
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "When Harry Met Sally"], ["rating", "R"], ["release_date", "1989-07-21 00:00:00.000000"], ["director", "Rob Reiner"], ["created_at", "2021-03-10 22:49:54.278762"], ["updated_at", "2021-03-10 22:49:54.278762"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Help"], ["rating", "PG-13"], ["release_date", "2011-08-10 00:00:00.000000"], ["director", "Tate Taylor"], ["created_at", "2021-03-10 22:49:54.282997"], ["updated_at", "2021-03-10 22:49:54.282997"]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.3ms)[0m  [1mDROP TABLE "movies"[0m
+  [1m[35m (2.9ms)[0m  CREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.1ms)[0m  DROP TABLE "movies"
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Aladdin"], ["rating", "G"], ["release_date", "1992-11-25 00:00:00.000000"], ["director", "Ron Clements"], ["created_at", "2021-03-10 22:56:40.456691"], ["updated_at", "2021-03-10 22:56:40.456691"]]
+  [1m[35m (3.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Terminator"], ["rating", "R"], ["release_date", "1984-10-26 00:00:00.000000"], ["director", "James Cameron"], ["created_at", "2021-03-10 22:56:40.461960"], ["updated_at", "2021-03-10 22:56:40.461960"]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "When Harry Met Sally"], ["rating", "R"], ["release_date", "1989-07-21 00:00:00.000000"], ["director", "Rob Reiner"], ["created_at", "2021-03-10 22:56:40.466518"], ["updated_at", "2021-03-10 22:56:40.466518"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Help"], ["rating", "PG-13"], ["release_date", "2011-08-10 00:00:00.000000"], ["director", "Tate Taylor"], ["created_at", "2021-03-10 22:56:40.470729"], ["updated_at", "2021-03-10 22:56:40.470729"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[36m (4.9ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (4.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (3.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+  [1m[36m (4.3ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (4.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (4.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Aladdin"], ["rating", "G"], ["release_date", "1992-11-25 00:00:00.000000"], ["director", "Ron Clements"], ["created_at", "2021-03-10 22:57:15.280595"], ["updated_at", "2021-03-10 22:57:15.280595"]]
+  [1m[35m (3.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Terminator"], ["rating", "R"], ["release_date", "1984-10-26 00:00:00.000000"], ["director", "James Cameron"], ["created_at", "2021-03-10 22:57:15.285729"], ["updated_at", "2021-03-10 22:57:15.285729"]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "When Harry Met Sally"], ["rating", "R"], ["release_date", "1989-07-21 00:00:00.000000"], ["director", "Rob Reiner"], ["created_at", "2021-03-10 22:57:15.290144"], ["updated_at", "2021-03-10 22:57:15.290144"]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Help"], ["rating", "PG-13"], ["release_date", "2011-08-10 00:00:00.000000"], ["director", "Tate Taylor"], ["created_at", "2021-03-10 22:57:15.294462"], ["updated_at", "2021-03-10 22:57:15.294462"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[36m (4.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (4.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateMovies (20111119180638)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in up at /home/ubuntu/environment/hw-acceptance-unit-test-cycle/rottenpotatoes/db/migrate/20111119180638_create_movies.rb:11)
+  [1m[35m (0.3ms)[0m  CREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20111119180638"]]
+  [1m[35m (4.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (4.7ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (16.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (4.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+
+
+Started GET "/" for 128.194.130.86 at 2021-03-10 22:58:16 +0000
+
+
+Started GET "/movies" for 128.194.130.86 at 2021-03-10 22:58:16 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.0ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 187ms (Views: 169.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 128.194.130.86 at 2021-03-10 22:58:49 +0000
+
+
+Started GET "/movies" for 128.194.130.86 at 2021-03-10 22:58:50 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.0ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 187ms (Views: 170.0ms | ActiveRecord: 1.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.6ms)[0m  [1mDROP TABLE "movies"[0m
+  [1m[35m (3.0ms)[0m  CREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.1ms)[0m  DROP TABLE "movies"
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Aladdin"], ["rating", "G"], ["release_date", "1992-11-25 00:00:00.000000"], ["director", "Ron Clements"], ["created_at", "2021-03-10 23:01:44.424482"], ["updated_at", "2021-03-10 23:01:44.424482"]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Terminator"], ["rating", "R"], ["release_date", "1984-10-26 00:00:00.000000"], ["director", "James Cameron"], ["created_at", "2021-03-10 23:01:44.428970"], ["updated_at", "2021-03-10 23:01:44.428970"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "When Harry Met Sally"], ["rating", "R"], ["release_date", "1989-07-21 00:00:00.000000"], ["director", "Rob Reiner"], ["created_at", "2021-03-10 23:01:44.432912"], ["updated_at", "2021-03-10 23:01:44.432912"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Help"], ["rating", "PG-13"], ["release_date", "2011-08-10 00:00:00.000000"], ["director", "Tate Taylor"], ["created_at", "2021-03-10 23:01:44.437008"], ["updated_at", "2021-03-10 23:01:44.437008"]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+  [1m[36m (4.7ms)[0m  [1mDROP TABLE "movies"[0m
+  [1m[35m (3.1ms)[0m  CREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.5ms)[0m  DROP TABLE "movies"
+  [1m[36m (3.2ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Aladdin"], ["rating", "G"], ["release_date", "1992-11-25 00:00:00.000000"], ["director", "Ron Clements"], ["created_at", "2021-03-10 23:02:33.132077"], ["updated_at", "2021-03-10 23:02:33.132077"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Terminator"], ["rating", "R"], ["release_date", "1984-10-26 00:00:00.000000"], ["director", "James Cameron"], ["created_at", "2021-03-10 23:02:33.136836"], ["updated_at", "2021-03-10 23:02:33.136836"]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "When Harry Met Sally"], ["rating", "R"], ["release_date", "1989-07-21 00:00:00.000000"], ["director", "Rob Reiner"], ["created_at", "2021-03-10 23:02:33.141526"], ["updated_at", "2021-03-10 23:02:33.141526"]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Help"], ["rating", "PG-13"], ["release_date", "2011-08-10 00:00:00.000000"], ["director", "Tate Taylor"], ["created_at", "2021-03-10 23:02:33.145745"], ["updated_at", "2021-03-10 23:02:33.145745"]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Chocolat"], ["rating", "PG-13"], ["release_date", "2001-01-05 00:00:00.000000"], ["director", "Lasse Hallström"], ["created_at", "2021-03-10 23:02:33.150094"], ["updated_at", "2021-03-10 23:02:33.150094"]]
+  [1m[35m (3.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Amelie"], ["rating", "R"], ["release_date", "2001-04-25 00:00:00.000000"], ["director", "Jean-Pierre Jeunet"], ["created_at", "2021-03-10 23:02:33.154435"], ["updated_at", "2021-03-10 23:02:33.154435"]]
+  [1m[36m (4.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "2001: A Space Odyssey"], ["rating", "G"], ["release_date", "1968-04-06 00:00:00.000000"], ["director", "Stanley Kubrick"], ["created_at", "2021-03-10 23:02:33.160027"], ["updated_at", "2021-03-10 23:02:33.160027"]]
+  [1m[35m (3.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-11-05 00:00:00.000000"], ["director", "Brad Bird"], ["created_at", "2021-03-10 23:02:33.164789"], ["updated_at", "2021-03-10 23:02:33.164789"]]
+  [1m[36m (3.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1981-06-12 00:00:00.000000"], ["director", "Steven Spielberg"], ["created_at", "2021-03-10 23:02:33.169492"], ["updated_at", "2021-03-10 23:02:33.169492"]]
+  [1m[35m (3.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Chicken Run"], ["rating", "G"], ["release_date", "2000-06-21 00:00:00.000000"], ["director", "Nick Park"], ["created_at", "2021-03-10 23:02:33.173871"], ["updated_at", "2021-03-10 23:02:33.173871"]]
+  [1m[36m (3.3ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (4.5ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (5.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (4.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+
+
+Started GET "/" for 128.194.130.86 at 2021-03-10 23:03:19 +0000
+
+
+Started GET "/movies" for 128.194.130.86 at 2021-03-10 23:03:19 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.1ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (12.6ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 198ms (Views: 180.7ms | ActiveRecord: 1.4ms)
+  [1m[36m (3.9ms)[0m  [1mDROP TABLE "movies"[0m
+  [1m[35m (3.4ms)[0m  CREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.0ms)[0m  DROP TABLE "movies"
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Aladdin"], ["rating", "G"], ["release_date", "1992-11-25 00:00:00.000000"], ["director", "Ron Clements"], ["created_at", "2021-03-10 23:16:00.337867"], ["updated_at", "2021-03-10 23:16:00.337867"]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Terminator"], ["rating", "R"], ["release_date", "1984-10-26 00:00:00.000000"], ["director", "James Cameron"], ["created_at", "2021-03-10 23:16:00.342497"], ["updated_at", "2021-03-10 23:16:00.342497"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "When Harry Met Sally"], ["rating", "R"], ["release_date", "1989-07-21 00:00:00.000000"], ["director", "Rob Reiner"], ["created_at", "2021-03-10 23:16:00.346686"], ["updated_at", "2021-03-10 23:16:00.346686"]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Help"], ["rating", "PG-13"], ["release_date", "2011-08-10 00:00:00.000000"], ["director", "Tate Taylor"], ["created_at", "2021-03-10 23:16:00.350799"], ["updated_at", "2021-03-10 23:16:00.350799"]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Chocolat"], ["rating", "PG-13"], ["release_date", "2001-01-05 00:00:00.000000"], ["director", "Lasse Hallström"], ["created_at", "2021-03-10 23:16:00.355510"], ["updated_at", "2021-03-10 23:16:00.355510"]]
+  [1m[35m (3.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Amelie"], ["rating", "R"], ["release_date", "2001-04-25 00:00:00.000000"], ["director", "Jean-Pierre Jeunet"], ["created_at", "2021-03-10 23:16:00.359982"], ["updated_at", "2021-03-10 23:16:00.359982"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "2001: A Space Odyssey"], ["rating", "G"], ["release_date", "1968-04-06 00:00:00.000000"], ["director", "Stanley Kubrick"], ["created_at", "2021-03-10 23:16:00.363991"], ["updated_at", "2021-03-10 23:16:00.363991"]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-11-05 00:00:00.000000"], ["director", "Brad Bird"], ["created_at", "2021-03-10 23:16:00.368041"], ["updated_at", "2021-03-10 23:16:00.368041"]]
+  [1m[36m (3.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1981-06-12 00:00:00.000000"], ["director", "Steven Spielberg"], ["created_at", "2021-03-10 23:16:00.372540"], ["updated_at", "2021-03-10 23:16:00.372540"]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Chicken Run"], ["rating", "G"], ["release_date", "2000-06-21 00:00:00.000000"], ["director", "Nick Park"], ["created_at", "2021-03-10 23:16:00.376576"], ["updated_at", "2021-03-10 23:16:00.376576"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Star Wars"], ["rating", "PG"], ["release_date", "1977-05-25 00:00:00.000000"], ["director", "George Lucas"], ["created_at", "2021-03-10 23:16:00.380741"], ["updated_at", "2021-03-10 23:16:00.380741"]]
+  [1m[35m (2.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Blade Runner"], ["rating", "G"], ["release_date", "1982-06-25 00:00:00.000000"], ["director", "Ridley Scott"], ["created_at", "2021-03-10 23:16:00.384773"], ["updated_at", "2021-03-10 23:16:00.384773"]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Alien"], ["rating", "G"], ["release_date", "1979-05-25 00:00:00.000000"], ["director", ""], ["created_at", "2021-03-10 23:16:00.389186"], ["updated_at", "2021-03-10 23:16:00.389186"]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "THX-1138"], ["rating", "G"], ["release_date", "1971-03-11 00:00:00.000000"], ["director", "George Lucas"], ["created_at", "2021-03-10 23:16:00.393264"], ["updated_at", "2021-03-10 23:16:00.393264"]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (4.6ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (4.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (4.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+
+
+Started GET "/" for 128.194.130.86 at 2021-03-10 23:18:51 +0000
+
+
+Started GET "/movies" for 128.194.130.86 at 2021-03-10 23:18:51 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.1ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (13.1ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 192ms (Views: 174.3ms | ActiveRecord: 1.4ms)
+  [1m[36m (4.4ms)[0m  [1mDROP TABLE "movies"[0m
+  [1m[35m (3.1ms)[0m  CREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.5ms)[0m  DROP TABLE "movies"
+  [1m[36m (4.1ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Aladdin"], ["rating", "G"], ["release_date", "1992-11-25 00:00:00.000000"], ["director", "Ron Clements"], ["created_at", "2021-03-10 23:19:44.267403"], ["updated_at", "2021-03-10 23:19:44.267403"]]
+  [1m[35m (3.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Terminator"], ["rating", "R"], ["release_date", "1984-10-26 00:00:00.000000"], ["director", "James Cameron"], ["created_at", "2021-03-10 23:19:44.272473"], ["updated_at", "2021-03-10 23:19:44.272473"]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "When Harry Met Sally"], ["rating", "R"], ["release_date", "1989-07-21 00:00:00.000000"], ["director", "Rob Reiner"], ["created_at", "2021-03-10 23:19:44.277196"], ["updated_at", "2021-03-10 23:19:44.277196"]]
+  [1m[35m (3.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Help"], ["rating", "PG-13"], ["release_date", "2011-08-10 00:00:00.000000"], ["director", "Tate Taylor"], ["created_at", "2021-03-10 23:19:44.281682"], ["updated_at", "2021-03-10 23:19:44.281682"]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Chocolat"], ["rating", "PG-13"], ["release_date", "2001-01-05 00:00:00.000000"], ["director", "Lasse Hallström"], ["created_at", "2021-03-10 23:19:44.286386"], ["updated_at", "2021-03-10 23:19:44.286386"]]
+  [1m[35m (3.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Amelie"], ["rating", "R"], ["release_date", "2001-04-25 00:00:00.000000"], ["director", "Jean-Pierre Jeunet"], ["created_at", "2021-03-10 23:19:44.291452"], ["updated_at", "2021-03-10 23:19:44.291452"]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "2001: A Space Odyssey"], ["rating", "G"], ["release_date", "1968-04-06 00:00:00.000000"], ["director", "Stanley Kubrick"], ["created_at", "2021-03-10 23:19:44.296014"], ["updated_at", "2021-03-10 23:19:44.296014"]]
+  [1m[35m (3.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-11-05 00:00:00.000000"], ["director", "Brad Bird"], ["created_at", "2021-03-10 23:19:44.300838"], ["updated_at", "2021-03-10 23:19:44.300838"]]
+  [1m[36m (3.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1981-06-12 00:00:00.000000"], ["director", "Steven Spielberg"], ["created_at", "2021-03-10 23:19:44.305383"], ["updated_at", "2021-03-10 23:19:44.305383"]]
+  [1m[35m (3.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Chicken Run"], ["rating", "G"], ["release_date", "2000-06-21 00:00:00.000000"], ["director", "Nick Park"], ["created_at", "2021-03-10 23:19:44.309986"], ["updated_at", "2021-03-10 23:19:44.309986"]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Star Wars"], ["rating", "PG"], ["release_date", "1977-05-25 00:00:00.000000"], ["director", "George Lucas"], ["created_at", "2021-03-10 23:19:44.314657"], ["updated_at", "2021-03-10 23:19:44.314657"]]
+  [1m[35m (3.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Blade Runner"], ["rating", "PG"], ["release_date", "1982-06-25 00:00:00.000000"], ["director", "Ridley Scott"], ["created_at", "2021-03-10 23:19:44.319460"], ["updated_at", "2021-03-10 23:19:44.319460"]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Alien"], ["rating", "R"], ["release_date", "1979-05-25 00:00:00.000000"], ["director", ""], ["created_at", "2021-03-10 23:19:44.324134"], ["updated_at", "2021-03-10 23:19:44.324134"]]
+  [1m[35m (3.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "THX-1138"], ["rating", "R"], ["release_date", "1971-03-11 00:00:00.000000"], ["director", "George Lucas"], ["created_at", "2021-03-10 23:19:44.328922"], ["updated_at", "2021-03-10 23:19:44.328922"]]
+  [1m[36m (3.3ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 128.194.130.86 at 2021-03-10 23:21:14 +0000
+
+
+Started GET "/movies" for 128.194.130.86 at 2021-03-10 23:21:14 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.1ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (12.9ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 198ms (Views: 181.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 128.194.130.86 at 2021-03-11 00:02:10 +0000
+
+
+Started GET "/movies" for 128.194.130.86 at 2021-03-11 00:02:10 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.1ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (13.1ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 195ms (Views: 177.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/movies/1" for 128.194.130.86 at 2021-03-11 00:02:14 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered movies/show.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 33ms (Views: 24.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/1/edit" for 128.194.130.86 at 2021-03-11 00:02:16 +0000
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered movies/edit.html.erb within layouts/application (26.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 55ms (Views: 53.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 128.194.130.86 at 2021-03-11 00:33:21 +0000
+
+
+Started GET "/movies" for 128.194.130.86 at 2021-03-11 00:33:22 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.1ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (13.1ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 190ms (Views: 172.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/movies/new" for 128.194.130.86 at 2021-03-11 00:33:27 +0000
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.erb within layouts/application (28.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 48ms (Views: 47.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/5" for 128.194.130.86 at 2021-03-11 00:33:31 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered movies/show.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 34ms (Views: 24.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (5.3ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (4.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (4.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+  [1m[36m (4.5ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (4.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (4.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Aladdin"], ["rating", "G"], ["release_date", "1992-11-25 00:00:00.000000"], ["created_at", "2021-03-11 19:48:20.981430"], ["updated_at", "2021-03-11 19:48:20.981430"]]
+  [1m[35m (3.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Terminator"], ["rating", "R"], ["release_date", "1984-10-26 00:00:00.000000"], ["created_at", "2021-03-11 19:48:20.986729"], ["updated_at", "2021-03-11 19:48:20.986729"]]
+  [1m[36m (3.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "When Harry Met Sally"], ["rating", "R"], ["release_date", "1989-07-21 00:00:00.000000"], ["created_at", "2021-03-11 19:48:20.991174"], ["updated_at", "2021-03-11 19:48:20.991174"]]
+  [1m[35m (3.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Help"], ["rating", "PG-13"], ["release_date", "2011-08-10 00:00:00.000000"], ["created_at", "2021-03-11 19:48:20.995784"], ["updated_at", "2021-03-11 19:48:20.995784"]]
+  [1m[36m (3.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Chocolat"], ["rating", "PG-13"], ["release_date", "2001-01-05 00:00:00.000000"], ["created_at", "2021-03-11 19:48:21.000402"], ["updated_at", "2021-03-11 19:48:21.000402"]]
+  [1m[35m (3.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Amelie"], ["rating", "R"], ["release_date", "2001-04-25 00:00:00.000000"], ["created_at", "2021-03-11 19:48:21.004787"], ["updated_at", "2021-03-11 19:48:21.004787"]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "2001: A Space Odyssey"], ["rating", "G"], ["release_date", "1968-04-06 00:00:00.000000"], ["created_at", "2021-03-11 19:48:21.009245"], ["updated_at", "2021-03-11 19:48:21.009245"]]
+  [1m[35m (3.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-11-05 00:00:00.000000"], ["created_at", "2021-03-11 19:48:21.013456"], ["updated_at", "2021-03-11 19:48:21.013456"]]
+  [1m[36m (3.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1981-06-12 00:00:00.000000"], ["created_at", "2021-03-11 19:48:21.018590"], ["updated_at", "2021-03-11 19:48:21.018590"]]
+  [1m[35m (3.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Chicken Run"], ["rating", "G"], ["release_date", "2000-06-21 00:00:00.000000"], ["created_at", "2021-03-11 19:48:21.023174"], ["updated_at", "2021-03-11 19:48:21.023174"]]
+  [1m[36m (3.3ms)[0m  [1mcommit transaction[0m
+  [1m[36m (4.4ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (4.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (4.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+  [1m[36m (5.2ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (5.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (4.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+  [1m[36m (4.5ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (4.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (4.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Aladdin"], ["rating", "G"], ["release_date", "1992-11-25 00:00:00.000000"], ["created_at", "2021-03-11 21:12:39.743885"], ["updated_at", "2021-03-11 21:12:39.743885"]]
+  [1m[35m (3.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Terminator"], ["rating", "R"], ["release_date", "1984-10-26 00:00:00.000000"], ["created_at", "2021-03-11 21:12:39.749188"], ["updated_at", "2021-03-11 21:12:39.749188"]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "When Harry Met Sally"], ["rating", "R"], ["release_date", "1989-07-21 00:00:00.000000"], ["created_at", "2021-03-11 21:12:39.753777"], ["updated_at", "2021-03-11 21:12:39.753777"]]
+  [1m[35m (3.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Help"], ["rating", "PG-13"], ["release_date", "2011-08-10 00:00:00.000000"], ["created_at", "2021-03-11 21:12:39.758833"], ["updated_at", "2021-03-11 21:12:39.758833"]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Chocolat"], ["rating", "PG-13"], ["release_date", "2001-01-05 00:00:00.000000"], ["created_at", "2021-03-11 21:12:39.763655"], ["updated_at", "2021-03-11 21:12:39.763655"]]
+  [1m[35m (3.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Amelie"], ["rating", "R"], ["release_date", "2001-04-25 00:00:00.000000"], ["created_at", "2021-03-11 21:12:39.768119"], ["updated_at", "2021-03-11 21:12:39.768119"]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "2001: A Space Odyssey"], ["rating", "G"], ["release_date", "1968-04-06 00:00:00.000000"], ["created_at", "2021-03-11 21:12:39.772742"], ["updated_at", "2021-03-11 21:12:39.772742"]]
+  [1m[35m (3.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-11-05 00:00:00.000000"], ["created_at", "2021-03-11 21:12:39.777301"], ["updated_at", "2021-03-11 21:12:39.777301"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1981-06-12 00:00:00.000000"], ["created_at", "2021-03-11 21:12:39.781457"], ["updated_at", "2021-03-11 21:12:39.781457"]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Chicken Run"], ["rating", "G"], ["release_date", "2000-06-21 00:00:00.000000"], ["created_at", "2021-03-11 21:12:39.785668"], ["updated_at", "2021-03-11 21:12:39.785668"]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 128.194.130.86 at 2021-03-11 21:16:05 +0000
+
+
+Started GET "/movies" for 128.194.130.86 at 2021-03-11 21:16:05 +0000
+Processing by MoviesController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (9.4ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 199ms (Views: 172.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 128.194.130.86 at 2021-03-11 21:16:05 +0000
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 128.194.130.86 at 2021-03-11 21:16:05 +0000
+
+
+Started GET "/movies/new" for 128.194.130.86 at 2021-03-11 21:16:50 +0000
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.erb within layouts/application (17.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 34.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/1" for 128.194.130.86 at 2021-03-11 21:16:59 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered movies/show.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 27ms (Views: 20.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/1/edit" for 128.194.130.86 at 2021-03-11 21:17:01 +0000
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered movies/edit.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 128.194.130.86 at 2021-03-11 21:19:34 +0000
+
+
+Started GET "/movies" for 128.194.130.86 at 2021-03-11 21:19:34 +0000
+Processing by MoviesController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (11.5ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 199ms (Views: 172.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/movies/new" for 128.194.130.86 at 2021-03-11 21:19:36 +0000
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.erb within layouts/application (28.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 42ms (Views: 41.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/1" for 128.194.130.86 at 2021-03-11 21:19:39 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered movies/show.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 29ms (Views: 21.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/same_dir/Aladdin" for 128.194.130.86 at 2021-03-11 21:19:40 +0000
+Processing by MoviesController#same_dir as HTML
+  Parameters: {"title"=>"Aladdin"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT 1  [["title", "Aladdin"]]
+Redirected to https://c597ecb25db145818d48cd755bc530fc.vfs.cloud9.us-east-2.amazonaws.com/movies
+  [1m[36mMovie Load (0.6ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."title" = 'Aladdin' LIMIT 1[0m
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/movies" for 128.194.130.86 at 2021-03-11 21:19:40 +0000
+Processing by MoviesController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+  [1m[36mMovie Load (0.7ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 19.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/movies/1/edit" for 128.194.130.86 at 2021-03-11 21:19:50 +0000
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered movies/edit.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/same_dir/Aladdin" for 128.194.130.86 at 2021-03-11 21:19:56 +0000
+Processing by MoviesController#same_dir as HTML
+  Parameters: {"title"=>"Aladdin"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT 1[0m  [["title", "Aladdin"]]
+Redirected to https://c597ecb25db145818d48cd755bc530fc.vfs.cloud9.us-east-2.amazonaws.com/movies
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."title" = 'Aladdin' LIMIT 1
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/movies" for 128.194.130.86 at 2021-03-11 21:19:56 +0000
+Processing by MoviesController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies/9" for 128.194.130.86 at 2021-03-11 21:20:03 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered movies/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/9/edit" for 128.194.130.86 at 2021-03-11 21:20:05 +0000
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered movies/edit.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 32ms (Views: 31.2ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/movies/9" for 128.194.130.86 at 2021-03-11 21:20:08 +0000
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QZWvE1BEmWSePnIvj1BHBFIX2mX/QDTepDEdw+uB1U5NITGbHaVGAoWEdKkVigiNhtXPxiL7vJC/w+TH2gwUxQ==", "movie"=>{"title"=>"Raiders of the Lost Ark", "director"=>"Steven Spielberg", "rating"=>"PG", "release_date(1i)"=>"1981", "release_date(2i)"=>"6", "release_date(3i)"=>"12"}, "commit"=>"Update Movie Info", "id"=>"9"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "movies" SET "director" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["director", "Steven Spielberg"], ["updated_at", "2021-03-11 21:20:08.598153"], ["id", 9]]
+  [1m[35m (3.6ms)[0m  commit transaction
+Redirected to https://c597ecb25db145818d48cd755bc530fc.vfs.cloud9.us-east-2.amazonaws.com/movies/9
+Completed 302 Found in 9ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/movies/9" for 128.194.130.86 at 2021-03-11 21:20:08 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered movies/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies" for 128.194.130.86 at 2021-03-11 21:20:12 +0000
+Processing by MoviesController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies/2" for 128.194.130.86 at 2021-03-11 21:20:16 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered movies/show.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/2/edit" for 128.194.130.86 at 2021-03-11 21:20:17 +0000
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered movies/edit.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/movies/2" for 128.194.130.86 at 2021-03-11 21:20:22 +0000
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"efmrTisXItDbqAIeHszmkXStylkm7tdcd4DI6a1pied1TTXGZvb9tsASBJiEFqkYoG/f+vtVXxJscjHtnORIbA==", "movie"=>{"title"=>"The Terminator", "director"=>"Steven Spielberg", "rating"=>"R", "release_date(1i)"=>"1984", "release_date(2i)"=>"10", "release_date(3i)"=>"26"}, "commit"=>"Update Movie Info", "id"=>"2"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "movies" SET "director" = ?, "updated_at" = ? WHERE "movies"."id" = ?  [["director", "Steven Spielberg"], ["updated_at", "2021-03-11 21:20:22.308583"], ["id", 2]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+Redirected to https://c597ecb25db145818d48cd755bc530fc.vfs.cloud9.us-east-2.amazonaws.com/movies/2
+Completed 302 Found in 9ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/movies/2" for 128.194.130.86 at 2021-03-11 21:20:22 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered movies/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/same_dir/The%20Terminator" for 128.194.130.86 at 2021-03-11 21:20:25 +0000
+Processing by MoviesController#same_dir as HTML
+  Parameters: {"title"=>"The Terminator"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT 1[0m  [["title", "The Terminator"]]
+  [1m[35m (0.2ms)[0m  SELECT "movies"."title" FROM "movies" WHERE "movies"."director" = ?  [["director", "Steven Spielberg"]]
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."title" = 'The Terminator' LIMIT 1[0m
+  Rendered movies/same_dir.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies" for 128.194.130.86 at 2021-03-11 21:20:30 +0000
+Processing by MoviesController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 128.194.130.86 at 2021-03-11 21:39:16 +0000
+
+
+Started GET "/movies" for 128.194.130.86 at 2021-03-11 21:39:16 +0000
+Processing by MoviesController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (8.7ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 189ms (Views: 164.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/movies/new" for 128.194.130.86 at 2021-03-11 21:39:18 +0000
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.erb within layouts/application (16.1ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 36ms (Views: 36.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (5.3ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (4.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (4.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+  [1m[36m (4.3ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (4.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (4.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Aladdin"], ["rating", "G"], ["release_date", "1992-11-25 00:00:00.000000"], ["created_at", "2021-03-11 21:43:49.952404"], ["updated_at", "2021-03-11 21:43:49.952404"]]
+  [1m[35m (3.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Terminator"], ["rating", "R"], ["release_date", "1984-10-26 00:00:00.000000"], ["created_at", "2021-03-11 21:43:49.957459"], ["updated_at", "2021-03-11 21:43:49.957459"]]
+  [1m[36m (3.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "When Harry Met Sally"], ["rating", "R"], ["release_date", "1989-07-21 00:00:00.000000"], ["created_at", "2021-03-11 21:43:49.961889"], ["updated_at", "2021-03-11 21:43:49.961889"]]
+  [1m[35m (3.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Help"], ["rating", "PG-13"], ["release_date", "2011-08-10 00:00:00.000000"], ["created_at", "2021-03-11 21:43:49.966364"], ["updated_at", "2021-03-11 21:43:49.966364"]]
+  [1m[36m (3.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Chocolat"], ["rating", "PG-13"], ["release_date", "2001-01-05 00:00:00.000000"], ["created_at", "2021-03-11 21:43:49.970717"], ["updated_at", "2021-03-11 21:43:49.970717"]]
+  [1m[35m (3.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Amelie"], ["rating", "R"], ["release_date", "2001-04-25 00:00:00.000000"], ["created_at", "2021-03-11 21:43:49.975448"], ["updated_at", "2021-03-11 21:43:49.975448"]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "2001: A Space Odyssey"], ["rating", "G"], ["release_date", "1968-04-06 00:00:00.000000"], ["created_at", "2021-03-11 21:43:49.979691"], ["updated_at", "2021-03-11 21:43:49.979691"]]
+  [1m[35m (3.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-11-05 00:00:00.000000"], ["created_at", "2021-03-11 21:43:49.984008"], ["updated_at", "2021-03-11 21:43:49.984008"]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1981-06-12 00:00:00.000000"], ["created_at", "2021-03-11 21:43:49.988240"], ["updated_at", "2021-03-11 21:43:49.988240"]]
+  [1m[35m (3.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Chicken Run"], ["rating", "G"], ["release_date", "2000-06-21 00:00:00.000000"], ["created_at", "2021-03-11 21:43:49.992666"], ["updated_at", "2021-03-11 21:43:49.992666"]]
+  [1m[36m (3.6ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (5.0ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (4.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (4.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+
+
+Started GET "/" for 47.218.195.22 at 2021-03-15 00:33:06 +0000
+Processing by MoviesController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (11.4ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 250ms (Views: 222.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 47.218.195.22 at 2021-03-15 00:33:06 +0000
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 47.218.195.22 at 2021-03-15 00:33:06 +0000
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 47.218.195.22 at 2021-03-15 00:33:06 +0000
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 47.218.195.22 at 2021-03-15 00:33:06 +0000
+
+
+Started GET "/movies?sort=release_date" for 47.218.195.22 at 2021-03-15 00:33:10 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"release_date"}
+  [1m[36m (0.2ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date
+  Rendered movies/index.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 26.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies?sort=title" for 47.218.195.22 at 2021-03-15 00:33:11 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"title"}
+  [1m[36m (0.2ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 36ms (Views: 32.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies?sort=release_date" for 47.218.195.22 at 2021-03-15 00:33:13 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"release_date"}
+  [1m[36m (0.2ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date
+  Rendered movies/index.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_flash.erb (6.7ms)
+Completed 200 OK in 42ms (Views: 39.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies?sort=title" for 47.218.195.22 at 2021-03-15 00:33:14 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"title"}
+  [1m[36m (0.2ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 21ms (Views: 18.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies?sort=release_date" for 47.218.195.22 at 2021-03-15 00:33:15 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"release_date"}
+  [1m[36m (0.2ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+  [1m[35mMovie Load (0.8ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date
+  Rendered movies/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 18ms (Views: 14.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/movies?sort=title" for 47.218.195.22 at 2021-03-15 00:33:16 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"title"}
+  [1m[36m (0.2ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 31ms (Views: 28.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&sort=title&commit=Refresh" for 47.218.195.22 at 2021-03-15 00:33:18 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1"}, "sort"=>"title", "commit"=>"Refresh"}
+  [1m[36m (0.2ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'G'  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 37ms (Views: 25.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BPG%5D=1&sort=title&commit=Refresh" for 47.218.195.22 at 2021-03-15 00:33:22 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"PG"=>"1"}, "sort"=>"title", "commit"=>"Refresh"}
+  [1m[36m (0.2ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+  [1m[35mMovie Load (1.5ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'PG'  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 40ms (Views: 34.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BPG-13%5D=1&sort=title&commit=Refresh" for 47.218.195.22 at 2021-03-15 00:33:25 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"PG-13"=>"1"}, "sort"=>"title", "commit"=>"Refresh"}
+  [1m[36m (0.2ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'PG-13'  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 17.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BR%5D=1&sort=title&commit=Refresh" for 47.218.195.22 at 2021-03-15 00:33:28 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"R"=>"1"}, "sort"=>"title", "commit"=>"Refresh"}
+  [1m[36m (0.2ms)[0m  [1mSELECT DISTINCT "movies"."rating" FROM "movies"[0m
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'R'  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 18.1ms | ActiveRecord: 0.4ms)
+  [1m[36m (8.6ms)[0m  [1mDROP TABLE "movies"[0m
+  [1m[35m (4.5ms)[0m  CREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (8.3ms)[0m  DROP TABLE "movies"
+  [1m[36m (3.2ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (8.1ms)[0m  [1mDROP TABLE "movies"[0m
+  [1m[35m (3.5ms)[0m  CREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (5.5ms)[0m  DROP TABLE "movies"
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (8.0ms)[0m  [1mDROP TABLE "movies"[0m
+  [1m[35m (4.4ms)[0m  CREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (7.4ms)[0m  DROP TABLE "movies"
+  [1m[36m (4.3ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (3.4ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Aladdin"], ["rating", "G"], ["release_date", "1992-11-25 00:00:00.000000"], ["director", "Ron Clements"], ["created_at", "2021-03-15 00:42:58.117769"], ["updated_at", "2021-03-15 00:42:58.117769"]]
+  [1m[35m (3.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Terminator"], ["rating", "R"], ["release_date", "1984-10-26 00:00:00.000000"], ["director", "James Cameron"], ["created_at", "2021-03-15 00:42:58.126332"], ["updated_at", "2021-03-15 00:42:58.126332"]]
+  [1m[36m (3.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "When Harry Met Sally"], ["rating", "R"], ["release_date", "1989-07-21 00:00:00.000000"], ["director", "Rob Reiner"], ["created_at", "2021-03-15 00:42:58.130871"], ["updated_at", "2021-03-15 00:42:58.130871"]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Help"], ["rating", "PG-13"], ["release_date", "2011-08-10 00:00:00.000000"], ["director", "Tate Taylor"], ["created_at", "2021-03-15 00:42:58.135185"], ["updated_at", "2021-03-15 00:42:58.135185"]]
+  [1m[36m (5.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Chocolat"], ["rating", "PG-13"], ["release_date", "2001-01-05 00:00:00.000000"], ["director", "Lasse Hallström"], ["created_at", "2021-03-15 00:42:58.141403"], ["updated_at", "2021-03-15 00:42:58.141403"]]
+  [1m[35m (3.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Amelie"], ["rating", "R"], ["release_date", "2001-04-25 00:00:00.000000"], ["director", "Jean-Pierre Jeunet"], ["created_at", "2021-03-15 00:42:58.146233"], ["updated_at", "2021-03-15 00:42:58.146233"]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "2001: A Space Odyssey"], ["rating", "G"], ["release_date", "1968-04-06 00:00:00.000000"], ["director", "Stanley Kubrick"], ["created_at", "2021-03-15 00:42:58.150638"], ["updated_at", "2021-03-15 00:42:58.150638"]]
+  [1m[35m (4.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-11-05 00:00:00.000000"], ["director", "Brad Bird"], ["created_at", "2021-03-15 00:42:58.156029"], ["updated_at", "2021-03-15 00:42:58.156029"]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1981-06-12 00:00:00.000000"], ["director", "Steven Spielberg"], ["created_at", "2021-03-15 00:42:58.160441"], ["updated_at", "2021-03-15 00:42:58.160441"]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Chicken Run"], ["rating", "G"], ["release_date", "2000-06-21 00:00:00.000000"], ["director", "Nick Park"], ["created_at", "2021-03-15 00:42:58.164787"], ["updated_at", "2021-03-15 00:42:58.164787"]]
+  [1m[36m (4.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Star Wars"], ["rating", "PG"], ["release_date", "1977-05-25 00:00:00.000000"], ["director", "George Lucas"], ["created_at", "2021-03-15 00:42:58.170259"], ["updated_at", "2021-03-15 00:42:58.170259"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Blade Runner"], ["rating", "PG"], ["release_date", "1982-06-25 00:00:00.000000"], ["director", "Ridley Scott"], ["created_at", "2021-03-15 00:42:58.174420"], ["updated_at", "2021-03-15 00:42:58.174420"]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Alien"], ["rating", "R"], ["release_date", "1979-05-25 00:00:00.000000"], ["director", ""], ["created_at", "2021-03-15 00:42:58.178813"], ["updated_at", "2021-03-15 00:42:58.178813"]]
+  [1m[35m (4.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "THX-1138"], ["rating", "R"], ["release_date", "1971-03-11 00:00:00.000000"], ["director", "George Lucas"], ["created_at", "2021-03-15 00:42:58.184549"], ["updated_at", "2021-03-15 00:42:58.184549"]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Incredibles"], ["rating", "PG"], ["director", "Brad Bird"], ["created_at", "2021-03-15 00:42:58.189160"], ["updated_at", "2021-03-15 00:42:58.189160"]]
+  [1m[35m (6.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Incredibles II"], ["rating", "PG"], ["director", "Brad Bird"], ["created_at", "2021-03-15 00:42:58.197076"], ["updated_at", "2021-03-15 00:42:58.197076"]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "director", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Avatar"], ["rating", "PG"], ["director", "James Cameron"], ["created_at", "2021-03-15 00:42:58.202145"], ["updated_at", "2021-03-15 00:42:58.202145"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("title", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Movie with no director info"], ["rating", "PG-13"], ["created_at", "2021-03-15 00:42:58.206195"], ["updated_at", "2021-03-15 00:42:58.206195"]]
+  [1m[36m (5.9ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (8.0ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "director" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (8.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (5.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')

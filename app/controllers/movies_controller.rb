@@ -8,25 +8,27 @@ class MoviesController < ApplicationController
 
   def index
     #Part 1,2,3 starts here:
-    if request.path == '/' #For a default path
-      reset_session
-    end
+    # if request.path == '/' #For a default path
+    #   reset_session
+    # end
     
-    @ratings_to_show =!session[:ratings_to_show].nil? ? session[:ratings_to_show]:[]
-    if !session[:sort_by].nil?
-      if !params[:sort].nil? and params[:sort] != session[:sort_by] #What if the sort value is changed?
-        session[:sort_by] = params[:sort]
-      end
-      @sort = session[:sort_by]
+    @session_sort = session[:sort_by]
+    @session_ratings = session[:ratings_to_show]
+    @ratings_to_show = !@session_ratings.nil? ? @session_ratings : []
+    if !@session_sort.nil?
+      # if !params[:sort].nil? and params[:sort] != @session_sort
+      #   @session_sort = params[:sort]
+      # end
+      @sort = @session_sort
     else
       @sort = params[:sort] 
     end
-    
-    session[:sort_by] = @sort  # Added for session record
+    # @sort = params[:sort]
+     @session_sort = @sort  # Added for session record
     
     if !params[:ratings].nil?
       @ratings_to_show = params[:ratings].keys
-      session[:ratings_to_show] = @ratings_to_show
+      @session_ratings = @ratings_to_show
     end
     
     @movies = Movie.with_ratings(@ratings_to_show)
@@ -36,24 +38,18 @@ class MoviesController < ApplicationController
     #Added for part 2
     #@sort = params[:sort] //Moved up for Part 3 Session data
 
-    if @sort
-      @movies = @movies.order(@sort)
+   if @sort
+      @movies = @movies.order(@sort) 
         case @sort
         when "title"
-          @title_header = 'bg-warning'    #bootstrap class
-        when !"title"
-          @title_header = 'hilite'        #css class
+          @title_header = 'bg-warning'
+          @release_date_header = 'hilite'
         when "release_date"
           @release_date_header = 'bg-warning'
-        when !"release_date"
-          @release_date_header = 'hilite'
+          @title_header = 'hilite'
         end
     end
     
-  end
-
-  def new
-    # default: render 'new' template
   end
 
   def create
@@ -79,11 +75,20 @@ class MoviesController < ApplicationController
     flash[:notice] = "Movie '#{@movie.title}' deleted."
     redirect_to movies_path
   end
+  
+  def same_dir
+    @find_same_dir = Movie.find_same_dir(params[:title])
+    if @find_same_dir.nil?
+      redirect_to movies_path
+      flash[:warning] = "'#{params[:title]}' has no director info"
+    end
+    @movie = Movie.find_by_title([params[:title]])
+  end
 
   private
   # Making "internal" methods private is not required, but is a common practice.
   # This helps make clear which methods respond to requests, and which ones do not.
   def movie_params
-    params.require(:movie).permit(:title, :rating, :description, :release_date)
+    params.require(:movie).permit(:title, :rating, :description, :release_date, :director)
   end
 end
